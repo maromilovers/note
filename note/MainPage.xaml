@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
+             xmlns:controls="clr-namespace:note"
+             x:Class="note.MainPage"
+             >
+    <AbsoluteLayout>
+        <StackLayout x:Name="layoutMain" WidthRequest="380" HeightRequest="400">
+        <Grid x:Name="grdMain" Margin="0" BackgroundColor="Pink" VerticalOptions="Start">
+            <Label x:Name="edText" Text="あ" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"
+                   FontFamily="SANS_SERIF"
+                   FontSize="400" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" WidthRequest="400"/>
+            <skia:SKCanvasView x:Name="canvasView"
+                           PaintSurface="OnCanvasViewPaintSurface"
+                            />
+            <Grid.Effects>
+                <tt:TouchEffect Capture="True"
+                            TouchAction="OnTouchEffectAction" />
+            </Grid.Effects>
+        </Grid>
+        <!--<StackLayout Orientation="Horizontal"></StackLayout>-->
+        <Grid x:Name="pnlColor" Margin="0" BackgroundColor="White"
+              HorizontalOptions="Center" VerticalOptions="End"
+              >
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition Height="0.33*"/>
+                    <RowDefinition Height="0.33*"/>
+                    <RowDefinition Height="0.33*"/>
+
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0"/>
+            </Grid.ColumnDefinitions>
+
+            
+                <ImageButton CornerRadius="10" BorderColor="SkyBlue" BorderWidth="1" x:Name="ibNext" Source="next.png" Aspect="AspectFit" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" WidthRequest="50" HeightRequest="50" BackgroundColor="White" Clicked="ibNext_Clicked"/>
+                <ImageButton x:Name="ibSave" BackgroundColor="#00000000" Source="clear.png" Aspect="AspectFit" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="1" WidthRequest="50" HeightRequest="50" Clicked="ibSave_Clicked"/>
+                <ImageButton x:Name="ibInputType" BackgroundColor="#00000000" Source="clear.png" Aspect="AspectFit" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="1" WidthRequest="50" HeightRequest="50" Clicked="ibInputType_Clicked"/>
+                <ImageButton x:Name="ibDetail" BackgroundColor="#00000000" Source="setting.png" Aspect="AspectFit" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="1" WidthRequest="50" HeightRequest="50" Clicked="ibDetail_Clicked"/>
+
+                <Label Grid.Row="1" Grid.Column="0"/>
+                <ImageButton x:Name="ibBlack"  Grid.Row="2" Grid.Column="1" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Black" Clicked="ibBlack_Clicked"/>
+                <ImageButton x:Name="ibRed"  Grid.Row="2" Grid.Column="2" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Red" Clicked="ibRed_Clicked"/>
+                <ImageButton x:Name="ibOrange"  Grid.Row="2" Grid.Column="3" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Orange" Clicked="ibOrange_Clicked"/>
+                <ImageButton x:Name="ibYellow"  Grid.Row="2" Grid.Column="4" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Yellow" Clicked="ibYellow_Clicked"/>
+                <ImageButton x:Name="ibGreen"  Grid.Row="2" Grid.Column="5" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Green" Clicked="ibGreen_Clicked"/>
+                <ImageButton x:Name="ibBlue"  Grid.Row="2" Grid.Column="6" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Blue" Clicked="ibBlue_Clicked"/>
+                <ImageButton x:Name="ibIndigo"  Grid.Row="2" Grid.Column="7" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Indigo" Clicked="ibIndigo_Clicked"/>
+                <ImageButton x:Name="ibPurple"  Grid.Row="2" Grid.Column="8" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Purple" Clicked="ibPurple_Clicked"/>
+                <ImageButton x:Name="ibWhite"  BorderColor="SkyBlue" BorderWidth="1" Grid.Row="2" Grid.Column="9" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="White" Clicked="ibWhite_Clicked"/>
+                <Label Grid.Row="1" Grid.Column="10"/>
+
+                <controls:AdMobBanner Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="9" WidthRequest="320" HeightRequest="50" />
+
+            </Grid>
+    </StackLayout>
+        <Grid x:Name="grdDetail" IsVisible="false"  Margin="20,75,20,75">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Image x:Name="imgDetail"  BackgroundColor="White" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="12" Grid.RowSpan="12" Margin="0"
+               HorizontalOptions="Center" IsVisible="true" VerticalOptions="Center" Aspect="AspectFit"/>
+            <Image Source="detail.png" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="10"/>
+
+            <Image Source="lbl1.png" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4"/>
+            <ImageButton x:Name="ibJun" CornerRadius="10" BackgroundColor="SkyBlue" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="3" IsVisible="true" Source="jun.png" WidthRequest="50" HeightRequest="20" Clicked="ibJun_Clicked"/>
+            <ImageButton x:Name="ibRand" CornerRadius="10" BackgroundColor="White" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="3" IsVisible="true" Source="rand.png" WidthRequest="50" HeightRequest="20" Clicked="ibRand_Clicked"/>
+
+            <Image Source="lbl2.png" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4"/>
+            <ImageButton CornerRadius="10" BackgroundColor="SkyBlue" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="3" 
+                         x:Name="ibHiragana" Source="hira.png" Aspect="AspectFit"  WidthRequest="50" HeightRequest="20" Clicked="ibHiragana_Clicked"/>
+            <ImageButton CornerRadius="10" BackgroundColor="White" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="8" Grid.Row="5" Grid.ColumnSpan="3" 
+                         x:Name="ibKatakana" Source="kata.png" Aspect="AspectFit"  WidthRequest="50" HeightRequest="20" Clicked="ibKatakana_Clicked"/>
+            <ImageButton CornerRadius="10" BackgroundColor="White" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="3" 
+                         x:Name="ibAlpha" Source="abc.png" Aspect="AspectFit" WidthRequest="50" HeightRequest="20" Clicked="ibAlpha_Clicked"/>
+            <ImageButton CornerRadius="10" BackgroundColor="White" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="8" Grid.Row="6" Grid.ColumnSpan="3" 
+                         x:Name="ibInput" Source="input.png" Aspect="AspectFit"  WidthRequest="50" HeightRequest="20" Clicked="ibInput_Clicked"/>
+            <Entry  BackgroundColor="White"
+                         Grid.Column="5" Grid.Row="7" Grid.RowSpan="2" Grid.ColumnSpan="6" 
+                         x:Name="txtInput" WidthRequest="50" HeightRequest="30"/>
+
+            <ImageButton CornerRadius="10" BackgroundColor="White" BorderColor="SkyBlue" BorderWidth="1"
+                         Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="10" 
+                         x:Name="ibOk" Source="ok.png" Aspect="AspectFit"  WidthRequest="50" HeightRequest="20" Clicked="ibOk_Clicked"/>
+
+        </Grid>
+    </AbsoluteLayout>
+
+</ContentPage>
